@@ -45,6 +45,7 @@ int main() {
     // Atribuicao das cidades e suas coordenadas
     vector<City> cities;
     double total_distance = 0;
+    double total_distance_aux = 0;
 
     for (int i = 0; i < n; i++) {
         City city;
@@ -74,7 +75,7 @@ int main() {
                     swap(cities_aux[main_vector_idx], cities_aux[aux_vector_idx]);
 
                     // Calculo da distancia total com base na troca realizada
-                    double total_distance_aux = calc_total_distance(cities_aux);
+                    total_distance_aux = calc_total_distance(cities_aux);
 
                     // Verificacao se a distancia total e menor
                     if (total_distance_aux < total_distance) {
@@ -84,12 +85,10 @@ int main() {
                         swap(cities_aux[main_vector_idx], cities_aux[aux_vector_idx]);
                     }
                 }
-                
             }
         }
         // Error
-        cerr << "local: " << total_distance << "";
-        
+        cerr << "local: " << total_distance << " ";
         // Imprime a sequencia de cidades
         for (int i = 0; i < (int) cities.size(); i++) {
             cerr << cities[i].idx << " ";
