@@ -250,8 +250,8 @@ def testa_busca_exaustiva():
         return res
 
 def testa_busca_local_omp():
-    if os.path.exists('busca-local'):
-        os.chdir('busca-local')
+    if os.path.exists('busca-local-paralela'):
+        os.chdir('busca-local-paralela')
         compila_programa('cpp', 'busca-local-paralela', '-fopenmp')
         tests = TestConfiguration.from_pattern('.', 'in*.txt', 'out*txt',
                                             environ={
